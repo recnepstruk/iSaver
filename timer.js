@@ -13,15 +13,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Interval function fired when button is clicked!
+var alert;
 var alert1;
 var alert2;
 var alert3;
 function breakOut() {
+	console.log("Started timer!")
+	alert = setTimeout(Break, 1000);
     alert1 = setInterval(firstBreak, 1000 * 60 * 20);
     alert2 = setInterval(secondBreak, 1000 * 60 * 30);
     alert3 = setInterval(thirdBreak, 1000 * 60 * 120);
 };
 
+// Test notification
+function Break() {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    return;
+  };
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+  else {
+    var notification = new Notification('Welcome to iSaver!', {
+      icon: 'http://images.clipartpanda.com/animated-googly-eyes-dTr5bXpT9.png',
+      body: "Here is where you'll see the notifications. To stop timers, simply refresh the page. Happy Working!",
+    });
+  };
+};
 
 // look into distance every 20min for 20sec
 function firstBreak() {
