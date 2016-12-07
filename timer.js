@@ -20,9 +20,9 @@ var alert3;
 function breakOut() {
 	console.log("Started timer!")
 	alert = setTimeout(Break, 1000);
-    alert1 = setInterval(firstBreak, 1000 * 60 * 20);
-    alert2 = setInterval(secondBreak, 1000 * 60 * 30);
-    alert3 = setInterval(thirdBreak, 1000 * 60 * 120);
+    alert1 = setInterval(firstBreak, 1000);
+    alert2 = setInterval(secondBreak, 4000);
+    alert3 = setInterval(thirdBreak, 10000);
 };
 
 // Test notification
